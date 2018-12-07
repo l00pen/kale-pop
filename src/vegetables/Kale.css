@@ -4,6 +4,10 @@
   left: 50%;
 }
 
+.Kale-Spin {
+  animation: Kale-spin infinite 20s linear;
+}
+
 .Kale-Pop {
   animation: KalePop infinite 2s linear;
   height: 40vmin;
@@ -24,5 +28,14 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes Kale-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

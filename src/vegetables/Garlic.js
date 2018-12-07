@@ -6,9 +6,7 @@ import './Garlic.css';
 
 const Garlic = () => (
   <div className="Garlic-Wrapper">
-    <div className="App-logo">
-      <img src={garlicImage} className="Garlic-Salsa" alt="garlic" />
-    </div>
+    <img src={garlicImage} className="Garlic-Salsa" alt="garlic" />
   </div>
 )
 
