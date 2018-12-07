@@ -1,9 +1,9 @@
 .Garlic-Wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 37%;
+  left: 5%;
 }
 
-.Garlic-Wrapper img {
-  width: 30%;
+.Garlic-Salsa {
+  height: 40vmin;
 }

@@ -1,7 +1,15 @@
 .Button-Nice {
   padding: 10px;
-  background: #cbc;
+  background: rgba(204, 187, 204, 0.4);
   border: 1px solid #997a99;
-  border-radius: 3px;
-  color: #473847;
+  border-radius: 50%;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+}
+
+.Button-Nice:focus,
+.Button-Nice:active {
+  box-shadow: 0 0 3pt 2pt #997a99;
+  outline: none;
 }

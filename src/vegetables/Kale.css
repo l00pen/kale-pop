@@ -1,6 +1,6 @@
 .Kale-Wrapper {
-  position: absolute;
-  bottom: 50%;
+  position: fixed;
+  top: 0;
   left: 50%;
 }
 

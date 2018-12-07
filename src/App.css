@@ -17,6 +17,12 @@
   color: white;
 }
 
+.App-title {
+  font-size: 5em;
+  font-weight: 100;
+  margin: 0;
+}
+
 .App-link {
   color: #61dafb;
 }
