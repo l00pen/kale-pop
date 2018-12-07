@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/kale-pop/precache-manifest.16bea66d072f901458a7fcad1107beb7.js"
+  "/kale-pop/precache-manifest.93c34272ec938ef76eac8099c5718811.js"
 );
 
 workbox.clientsClaim();
