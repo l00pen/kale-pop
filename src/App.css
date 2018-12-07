@@ -27,3 +27,55 @@
   position: relative;
   width: 100%;
 }
+
+.Play-Controls {
+  position: fixed;
+  left: 0;
+  z-index: 3;
+  top: 50%;
+  display: flex;
+  transform: translateX(-64px);
+}
+
+.Content {
+  border: 1px solid #cbc;
+  overflow: hidden; 
+  margin: 0 -4px;
+  height: 200px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.Play-Controls.expanded {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: bounceInLeft;
+}
+
+.Button-Invisible {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.Button-Invisible:focus {
+  outline: none;
+}
+
+@keyframes bounceInLeft {
+  0% {
+    transform: translateX(-64px);
+  }
+
+  60% {
+    transform: translateX(4px);
+  }
+  80% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

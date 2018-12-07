@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tone from 'tone';
 
+import PlayControls from './PlayControls'
 import Controls from './Controls'
 import Kale from './vegetables/Kale';
 import Garlic from './vegetables/Garlic';
@@ -29,15 +30,15 @@ class App extends Component {
       }).toMaster(),
       mintSynth: new Tone.PolySynth(6, Tone.Synth).toMaster(),
       loop: new Tone.Loop(this.toneLoopCallback.bind(this), "4n"),
+      mute: false,
+      isPlaying: false,
     }
 
     this.state.mintSynth.set("detune", -1200);
 
     const distortion = new Tone.Distortion(0.4).toMaster();
-    const pwm = new Tone.PWMOscillator("Bb3").toMaster();
 
     this.state.synth.connect(distortion);
-    // this.state.synth.connect(pwm);
 
     this.state.loop.start();
     Tone.Transport.start();
@@ -45,7 +46,6 @@ class App extends Component {
 
   toneLoopCallback(time) {
     if (this.state.garlic) {
-      console.log(time * 2, Tone.Time('8n'), time)
       this.state.synth.triggerAttackRelease('C4', '4n', time * 2)
       this.state.synth.triggerAttackRelease('E4', '8n', time + Tone.Time('8n'))
       this.state.synth.triggerAttackRelease('E4', '8n', time + Tone.Time('8n'))
@@ -69,15 +69,24 @@ class App extends Component {
       //loop it every measure for 8 measures
       chord.loop = 8;
     }
+
+    this.setState({ isPlaying: this.state.mint || this.state.kale || this.state.garlic });
   }
 
   toggleVegetable(veggie) {
     this.setState({ [veggie]: !this.state[veggie] })
   }
 
+  toggleMute() {
+    this.setState({ mute: !this.state.mute }, () => {
+      Tone.Master.mute = this.state.mute;
+    })
+  }
+
   render() {
     return (
       <div className="App">
+        <PlayControls toggleMute={this.toggleMute.bind(this)} />
         <header className="App-header">
           <h1 className="App-title">
             Pick a vegetable
