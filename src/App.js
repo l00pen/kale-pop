@@ -83,15 +83,21 @@ class App extends Component {
             Pick a vegetable
           </p>
           <div className="Controls">
-            <ButtonNice onClick={this.toggleVegetable.bind(this, 'kale')}>
-              KALE
-            </ButtonNice>
-            <ButtonNice onClick={this.toggleVegetable.bind(this, 'garlic')}>
-              GARLIC
-            </ButtonNice>
-            <ButtonNice onClick={this.toggleVegetable.bind(this, 'minth')}>
-              MINTH
-            </ButtonNice>
+            <div className="Controls-item">
+              <ButtonNice onClick={this.toggleVegetable.bind(this, 'kale')}>
+                KALE
+              </ButtonNice>
+            </div>
+            <div className="Controls-item">
+              <ButtonNice onClick={this.toggleVegetable.bind(this, 'garlic')}>
+                GARLIC
+              </ButtonNice>
+            </div>
+            <div className="Controls-item">
+              <ButtonNice onClick={this.toggleVegetable.bind(this, 'minth')}>
+                MINTH
+              </ButtonNice>
+            </div>
           </div>
           <div className="Vegetable-Band">
             { this.state.kale &&

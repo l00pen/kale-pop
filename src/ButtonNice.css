@@ -1,5 +1,7 @@
 .Button-Nice {
-  padding: 20px;
-  border: 1px solid #cbc;
+  padding: 10px;
+  background: #cbc;
+  border: 1px solid #997a99;
   border-radius: 3px;
+  color: #473847;
 }
