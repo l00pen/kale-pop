@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tone from 'tone';
 
+import ButtonNice from './ButtonNice'
 import Kale from './vegetables/Kale';
 import Garlic from './vegetables/Garlic';
 import Minth from './vegetables/Minth';
@@ -70,6 +71,10 @@ class App extends Component {
     }
   }
 
+  toggleVegetable(veggie) {
+    this.setState({ [veggie]: !this.state[veggie] })
+  }
+
   render() {
     return (
       <div className="App">
@@ -78,21 +83,15 @@ class App extends Component {
             Pick a vegetable
           </p>
           <div className="Controls">
-            <button
-              onClick={() => this.setState({ kale: !this.state.kale })}
-            >
+            <ButtonNice onClick={this.toggleVegetable.bind(this, 'kale')}>
               KALE
-            </button>
-            <button
-              onClick={() => this.setState({ garlic: !this.state.garlic })}
-            >
+            </ButtonNice>
+            <ButtonNice onClick={this.toggleVegetable.bind(this, 'garlic')}>
               GARLIC
-            </button>
-            <button
-              onClick={() => this.setState({ minth: !this.state.minth })}
-            >
+            </ButtonNice>
+            <ButtonNice onClick={this.toggleVegetable.bind(this, 'minth')}>
               MINTH
-            </button>
+            </ButtonNice>
           </div>
           <div className="Vegetable-Band">
             { this.state.kale &&
