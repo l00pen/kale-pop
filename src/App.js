@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Tone from 'tone';
 
-import ButtonNice from './ButtonNice'
+import Controls from './Controls'
 import Kale from './vegetables/Kale';
 import Garlic from './vegetables/Garlic';
 import Minth from './vegetables/Minth';
@@ -82,23 +82,7 @@ class App extends Component {
           <p>
             Pick a vegetable
           </p>
-          <div className="Controls">
-            <div className="Controls-item">
-              <ButtonNice onClick={this.toggleVegetable.bind(this, 'kale')}>
-                KALE
-              </ButtonNice>
-            </div>
-            <div className="Controls-item">
-              <ButtonNice onClick={this.toggleVegetable.bind(this, 'garlic')}>
-                GARLIC
-              </ButtonNice>
-            </div>
-            <div className="Controls-item">
-              <ButtonNice onClick={this.toggleVegetable.bind(this, 'minth')}>
-                MINTH
-              </ButtonNice>
-            </div>
-          </div>
+          <Controls toggleVegetable={this.toggleVegetable.bind(this)} />
           <div className="Vegetable-Band">
             { this.state.kale &&
               <Kale />

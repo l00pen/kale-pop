@@ -1,0 +1,16 @@
+.Controls {
+  z-index: 1;
+  display: flex;
+}
+
+.Controls-item {
+  margin: 16px;
+}
+
+.Controls-item:first-child {
+  margin-left: 0;
+}
+
+.Controls-item:last-child {
+  margin-right: 0;
+}
