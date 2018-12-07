@@ -20,8 +20,8 @@ class Controls extends Component {
           </ButtonNice>
         </div>
         <div className="Controls-item">
-          <ButtonNice onClick={() => toggleVegetable('minth')}>
-            MINTH
+          <ButtonNice onClick={() => toggleVegetable('mint')}>
+            MINT
           </ButtonNice>
         </div>
       </div>

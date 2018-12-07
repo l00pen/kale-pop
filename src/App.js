@@ -4,7 +4,7 @@ import Tone from 'tone';
 import Controls from './Controls'
 import Kale from './vegetables/Kale';
 import Garlic from './vegetables/Garlic';
-import Minth from './vegetables/Minth';
+import Mint from './vegetables/Mint';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       garlic: false,
       kale: false,
-      minth: false,
+      mint: false,
       synth: new Tone.Synth().toMaster(),
       bass: new Tone.MembraneSynth({
         oscillator : {
@@ -27,11 +27,11 @@ class App extends Component {
           release: 4
         }
       }).toMaster(),
-      minthSynth: new Tone.PolySynth(6, Tone.Synth).toMaster(),
+      mintSynth: new Tone.PolySynth(6, Tone.Synth).toMaster(),
       loop: new Tone.Loop(this.toneLoopCallback.bind(this), "4n"),
     }
 
-    this.state.minthSynth.set("detune", -1200);
+    this.state.mintSynth.set("detune", -1200);
 
     const distortion = new Tone.Distortion(0.4).toMaster();
     const pwm = new Tone.PWMOscillator("Bb3").toMaster();
@@ -59,7 +59,7 @@ class App extends Component {
       this.state.bass.triggerAttackRelease("E2", "8n", time);
     }
 
-    if (this.state.minth) {
+    if (this.state.mint) {
       var chord = new Tone.Event(function(time, chord){
         //the chord as well as the exact time of the event
         //are passed in as arguments to the callback function
@@ -79,20 +79,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
+          <h1 className="App-title">
             Pick a vegetable
-          </p>
+          </h1>
           <Controls toggleVegetable={this.toggleVegetable.bind(this)} />
           <div className="Vegetable-Band">
-            { this.state.kale &&
-              <Kale />
-            }
-            { this.state.garlic &&
-              <Garlic />
-            }
-            { this.state.minth &&
-              <Minth />
-            }
+            { this.state.kale && <Kale />}
+            { this.state.garlic && <Garlic />}
+            { this.state.mint && <Mint />}
           </div>
         </header>
       </div>

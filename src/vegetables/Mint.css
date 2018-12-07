@@ -1,10 +1,10 @@
-.Minth-Wrapper {
+.Mint-Wrapper {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.Minth-Salsa {
+.Mint-Salsa {
   animation: DillSway infinite 4s linear;
 }
 
