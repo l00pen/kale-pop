@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import kaleImage from './vegetables/kale.png';
-import garlicImage from './vegetables/garlic.png';
-import minthImage from './vegetables/minth.png';
-
 import Tone from 'tone';
+
+import Kale from './vegetables/Kale';
+import Garlic from './vegetables/Garlic';
+import Minth from './vegetables/Minth';
+
 import './App.css';
 
 class App extends Component {
@@ -95,19 +96,13 @@ class App extends Component {
           </div>
           <div className="Vegetable-Band">
             { this.state.kale &&
-              <div className="Kale-Wrapper App-logo">
-                <img src={kaleImage} className="Kale-Pop" alt="kale" />
-              </div>
+              <Kale />
             }
             { this.state.garlic &&
-              <div className="Garlic-Wrapper App-logo">
-                <img src={garlicImage} className="Garlic-Salsa" alt="garlic" />
-              </div>
+              <Garlic />
             }
             { this.state.minth &&
-              <div className="Minth-Wrapper">
-                <img src={minthImage} className="Minth-Salsa" alt="minth" />
-              </div>
+              <Minth />
             }
           </div>
         </header>
