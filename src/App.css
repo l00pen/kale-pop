@@ -6,11 +6,6 @@
   animation: App-logo-spin infinite 20s linear;
 }
 
-.Kale-Pop {
-  animation: KalePop infinite 2s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #607d8b;
   min-height: 100vh;
@@ -24,6 +19,49 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.Vegetable-Band {
+  position: relative;
+  width: 100%;
+}
+
+.Kale-Pop {
+  animation: KalePop infinite 2s linear;
+  height: 40vmin;
+}
+
+.Minth-Wrapper,
+.Kale-Wrapper,
+.Garlic-Wrapper {
+  position: absolute;
+}
+
+.Kale-Wrapper {
+  bottom: 50%;
+  left: 50%;
+}
+
+.Minth-Wrapper {
+  top: 0;
+  left: 0;
+}
+
+.Garlic-Wrapper {
+  top: 0;
+  right: 0;
+}
+
+.Garlic-Wrapper img {
+  width: 30%;
+}
+
+.Minth-Salsa {
+  animation: DillSway infinite 4s linear;
+}
+
+.Controls {
+  z-index: 1000;
 }
 
 @keyframes App-logo-spin {
@@ -51,4 +89,12 @@
   100% {
     transform: scale(1);
   }
+}
+
+@keyframes DillSway {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-10deg);}
+  100% {transform: rotate(10deg);}
 }
