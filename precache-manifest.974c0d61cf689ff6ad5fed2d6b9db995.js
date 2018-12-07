@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/kale-pop/static/js/runtime~main.b3234100.js"
   },
   {
-    "revision": "5a397813e8c2404b505d",
-    "url": "/kale-pop/static/js/main.5a397813.chunk.js"
+    "revision": "68529f3d93885753dcac",
+    "url": "/kale-pop/static/js/main.68529f3d.chunk.js"
   },
   {
-    "revision": "ad7197e0aab7794c561e",
-    "url": "/kale-pop/static/js/1.ad7197e0.chunk.js"
+    "revision": "d718aef9a4ea4fa0649d",
+    "url": "/kale-pop/static/js/1.d718aef9.chunk.js"
   },
   {
-    "revision": "5a397813e8c2404b505d",
-    "url": "/kale-pop/static/css/main.e242b484.chunk.css"
+    "revision": "68529f3d93885753dcac",
+    "url": "/kale-pop/static/css/main.50408e32.chunk.css"
   },
   {
-    "revision": "368926bea248fc19cd48f2ca98d46e65",
+    "revision": "9dfc807619f5d8840e3feba08470c98d",
     "url": "/kale-pop/index.html"
   }
 ];

@@ -1,16 +1,16 @@
 {
-  "main.css": "/kale-pop/static/css/main.e242b484.chunk.css",
-  "main.js": "/kale-pop/static/js/main.5a397813.chunk.js",
-  "main.js.map": "/kale-pop/static/js/main.5a397813.chunk.js.map",
-  "static/js/1.ad7197e0.chunk.js": "/kale-pop/static/js/1.ad7197e0.chunk.js",
-  "static/js/1.ad7197e0.chunk.js.map": "/kale-pop/static/js/1.ad7197e0.chunk.js.map",
+  "main.css": "/kale-pop/static/css/main.50408e32.chunk.css",
+  "main.js": "/kale-pop/static/js/main.68529f3d.chunk.js",
+  "main.js.map": "/kale-pop/static/js/main.68529f3d.chunk.js.map",
+  "static/js/1.d718aef9.chunk.js": "/kale-pop/static/js/1.d718aef9.chunk.js",
+  "static/js/1.d718aef9.chunk.js.map": "/kale-pop/static/js/1.d718aef9.chunk.js.map",
   "runtime~main.js": "/kale-pop/static/js/runtime~main.b3234100.js",
   "runtime~main.js.map": "/kale-pop/static/js/runtime~main.b3234100.js.map",
-  "static/css/main.e242b484.chunk.css.map": "/kale-pop/static/css/main.e242b484.chunk.css.map",
+  "static/css/main.50408e32.chunk.css.map": "/kale-pop/static/css/main.50408e32.chunk.css.map",
   "static/media/kale.png": "/kale-pop/static/media/kale.25994c48.png",
   "static/media/mint.png": "/kale-pop/static/media/mint.42e84a28.png",
   "static/media/garlic.png": "/kale-pop/static/media/garlic.13277a03.png",
   "index.html": "/kale-pop/index.html",
-  "precache-manifest.93c34272ec938ef76eac8099c5718811.js": "/kale-pop/precache-manifest.93c34272ec938ef76eac8099c5718811.js",
+  "precache-manifest.974c0d61cf689ff6ad5fed2d6b9db995.js": "/kale-pop/precache-manifest.974c0d61cf689ff6ad5fed2d6b9db995.js",
   "service-worker.js": "/kale-pop/service-worker.js"
 }
