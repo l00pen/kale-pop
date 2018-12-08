@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      vegetables: Object.values(playableVegetables),
+      vegetables: playableVegetables,
       loop: new Tone.Loop(this.toneLoopCallback.bind(this), "4n"),
       isMuted: false,
       isPlaying: false,

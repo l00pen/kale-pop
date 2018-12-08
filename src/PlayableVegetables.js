@@ -55,8 +55,8 @@ function mintLoop(mint, time) {
   }
 }
 
-const vegetables = {
-  garlic: {
+const vegetables = [
+  {
     id: 'garlic',
     label: 'GARLIC',
     isPlaying: false,
@@ -64,7 +64,7 @@ const vegetables = {
     onLoop: garlicLoop,
     component: Garlic,
   },
-  kale: {
+  {
     id: 'kale',
     label: 'KALE',
     isPlaying: false,
@@ -72,7 +72,7 @@ const vegetables = {
     onLoop: kaleLoop,
     component: Kale,
   },
-  mint: {
+  {
     id: 'mint',
     label: 'MINT',
     isPlaying: false,
@@ -80,6 +80,6 @@ const vegetables = {
     onLoop: mintLoop,
     component: Mint,
   },
-};
+];
 
 export default vegetables;
