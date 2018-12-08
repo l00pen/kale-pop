@@ -4,7 +4,7 @@ import Tone from 'tone';
 import PlayControls from './PlayControls'
 import Controls from './Controls'
 
-import PlayableVegetables from './PlayableVegetables';
+import playableVegetables from './PlayableVegetables';
 
 import './App.css';
 
@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      vegetables: PlayableVegetables,
+      vegetables: Object.values(playableVegetables),
       loop: new Tone.Loop(this.toneLoopCallback.bind(this), "4n"),
       isMuted: false,
       isPlaying: false,
@@ -22,29 +22,32 @@ class App extends Component {
     Tone.Transport.start();
 
     this.toggleIsAnyVegetablePlaying = this.toggleIsAnyVegetablePlaying.bind(this);
+    this.toggleMute = this.toggleMute.bind(this);
+    this.toggleVegetablePlay = this.toggleVegetablePlay.bind(this);
   }
 
   toneLoopCallback(time) {
-    const veggieValueArray = Object.values(this.state.vegetables);
-
-    veggieValueArray.map((veggie) => veggie.onLoop(veggie, time));
-    this.toggleIsAnyVegetablePlaying(veggieValueArray)
+    this.state.vegetables.map((veggie) => veggie.onLoop(veggie, time));
+    this.toggleIsAnyVegetablePlaying()
   }
 
-  toggleIsAnyVegetablePlaying(veggieValueArray) {
-    const isAnyVeggiePlaying = veggieValueArray.reduce((mem, veggie) => {
+  toggleIsAnyVegetablePlaying() {
+    const isAnyVeggiePlaying = this.state.vegetables.reduce((mem, veggie) => {
       return mem || veggie.isPlaying;
     }, false);
 
     this.setState({ isPlaying: isAnyVeggiePlaying });
   }
 
-  toggleVegetablePlay(veggie) {
-    const vegetable = this.state.vegetables[veggie];
+  toggleVegetablePlay(veggieId) {
+    const updatedVegetables = this.state.vegetables.map((veggie) => {
+      if (veggie.id === veggieId) {
+        return Object.assign({}, veggie, { isPlaying: !veggie.isPlaying })
+      }
+      return veggie;
+    })
     this.setState({
-      vegetables: Object.assign({}, this.state.vegetables, {
-        [veggie]: Object.assign({}, vegetable, { isPlaying: !vegetable.isPlaying }),
-      }),
+      vegetables: updatedVegetables,
     });
   }
 
@@ -55,21 +58,21 @@ class App extends Component {
   }
 
   render() {
-    const vegetableArray = Object.values(this.state.vegetables)
+    const { vegetables } = this.state;
     return (
       <div className="App">
-        <PlayControls toggleMute={this.toggleMute.bind(this)} />
+        <PlayControls toggleMute={this.toggleMute} />
         <header className="App-header">
           <h1 className="App-title">
             Pick a vegetable
           </h1>
           <Controls
-            vegetables={vegetableArray}
-            toggleVegetable={this.toggleVegetablePlay.bind(this)}
+            vegetables={vegetables}
+            toggleVegetable={this.toggleVegetablePlay}
           />
           <div className="Vegetable-Band">
-            { vegetableArray.map(({ isPlaying, tag: Tag, id }, i) => (
-              isPlaying && <Tag key={id} />
+            { vegetables.map(({ isPlaying, component: Component, id }, i) => (
+              isPlaying && <Component key={id} />
             ))}
           </div>
         </header>
