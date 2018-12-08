@@ -62,7 +62,7 @@ const vegetables = {
     isPlaying: false,
     instrument: setupGarlicInstrument(),
     onLoop: garlicLoop,
-    tag: Garlic,
+    component: Garlic,
   },
   kale: {
     id: 'kale',
@@ -70,7 +70,7 @@ const vegetables = {
     isPlaying: false,
     instrument: setupKaleInstrument(),
     onLoop: kaleLoop,
-    tag: Kale,
+    component: Kale,
   },
   mint: {
     id: 'mint',
@@ -78,7 +78,7 @@ const vegetables = {
     isPlaying: false,
     instrument: setupMintInstrument(),
     onLoop: mintLoop,
-    tag: Mint,
+    component: Mint,
   },
 };
 
