@@ -6,24 +6,16 @@ import './Controls.css';
 
 class Controls extends Component {
   render() {
-    const { toggleVegetable } = this.props;
+    const { vegetables, toggleVegetable } = this.props;
     return (
       <div className="Controls">
-        <div className="Controls-item">
-          <ButtonNice onClick={() => toggleVegetable('kale')}>
-            KALE
-          </ButtonNice>
-        </div>
-        <div className="Controls-item">
-          <ButtonNice onClick={() => toggleVegetable('garlic')}>
-            GARLIC
-          </ButtonNice>
-        </div>
-        <div className="Controls-item">
-          <ButtonNice onClick={() => toggleVegetable('mint')}>
-            MINT
-          </ButtonNice>
-        </div>
+        { vegetables.map(({ id, label }) => (
+          <div key={id} className="Controls-item">
+            <ButtonNice onClick={() => toggleVegetable(id)}>
+              {label}
+            </ButtonNice>
+          </div>
+        ))}
       </div>
     );
   }
